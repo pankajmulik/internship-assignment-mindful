@@ -1,35 +1,28 @@
 const mongoose = require("mongoose");
 
-const newUserModel = mongoose.Schema(
+const addUser = mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
     },
-    Email: {
+
+    email: {
       type: String,
       required: true,
     },
-    phone: {
+    Phone: {
       type: Number,
       required: true,
     },
-    gender: {
+    address: {
       type: String,
-    },
-    referal: {
-      type: String,
-    },
-    city: {
-      type: String,
-    },
-    state: {
-      type: String,
+      required: true,
     },
   },
-
   {
     timestamps: true,
   }
 );
-module.exports = mongoose.model("NewUser", newUserModel);
+
+module.exports = mongoose.model("addnewUser", addUser);
