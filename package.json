@@ -1,0 +1,15 @@
+{
+  "name": "internship-assignment-mindful",
+  "version": "1.0.0",
+  "description": "inyternship task 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pankaj Mulik",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.6.0"
+  }
+}
