@@ -2,12 +2,38 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 
-const addUser = require("../model/addUser");
+const Workout = require("../model/addUser");
 
 const getAddedUser = async (req, res) => {
-  const users = await addUser.find({}).sort({ createdAt: -1 });
+  const users = await Workout.find({}).sort({ createdAt: -1 });
 
   res.status(200).json(users);
 };
 
-module.exports = getAddedUser;
+const createUser = async (req, res) => {
+  const { name, email, phone, address } = req.body;
+
+  try {
+    const user = await Workout.create({ name, email, phone, address });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "no such workout" });
+  }
+
+  const user = await Workout.findOneAndDelete({ _id: id });
+
+  if (!user) {
+    return res.status(400).json({ error: "no such workout" });
+  }
+  res.status(200).json(user);
+};
+
+module.exports = { getAddedUser, createUser, deleteUser };
