@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const Workout = require("../model/addUser");
 
+
 const getAddedUser = async (req, res) => {
   const users = await Workout.find({}).sort({ createdAt: -1 });
 
@@ -55,4 +56,16 @@ const updateUser = async (req, res) => {
   res.status(200).json(user);
 };
 
+<<<<<<< HEAD
 module.exports = { getAddedUser, createUser, deleteUser, updateUser };
+=======
+
+
+module.exports = {
+  getAddedUser,
+  createUser,
+  deleteUser,
+  updateUser
+  
+};
+>>>>>>> 246292393eec81ffe97cceb6c633c774470de3c6
