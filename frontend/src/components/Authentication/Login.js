@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate,Link } from "react-router-dom";
+import Signup from "./Signup";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState(" ");
 
   const [redirect, setredirect] = useState(false);
+  
+  const [state,setState]=useState("login")
 
   const handleSubmit = (event) => {
     event.preventDefault(Login);
@@ -14,10 +17,16 @@ const Login = () => {
     setredirect(true);
   };
 
-  function validate() {}
-
+  function validate() { }
+  
+ 
   return (
     <div>
+      <div className="heading">
+        <h1>Login </h1>
+</div>
+
+      <div className="form-control">
       <form onSubmit={handleSubmit}>
         <label htmlFor="email"> Email :</label>
         <input
@@ -27,7 +36,7 @@ const Login = () => {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
-
+<br/><br/>
         <label htmlFor="password"> Password :</label>
         <input
           type="password"
@@ -35,11 +44,21 @@ const Login = () => {
           id="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-        />
+          />
+
+          <br/><br/>
+
         <button type="submit" onClick={validate()}>
-          submit
-        </button>
+        Login
+          </button>
+          
+
+          
       </form>
+
+
+      </div>
+      
       {redirect === true ? <Navigate push to="/dashboard"></Navigate> : null}
     </div>
   );
