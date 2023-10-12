@@ -10,6 +10,7 @@ const {
 } = require("../controller/workoutController");
 
 <<<<<<< HEAD
+  createSignupUser,
 const { getUser, createNewUser } = require("../controller/signupController");
 =======
 const {
