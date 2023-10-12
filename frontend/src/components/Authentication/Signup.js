@@ -8,7 +8,7 @@ const Signup = () => {
   const [password, setPassword] = useState(" ");
 
   return (
-    <div>
+    <div className="form-control">
       <form>
         <label htmlFor="Name">Name :</label>
         <input
@@ -18,6 +18,8 @@ const Signup = () => {
           value={Fname}
           onChange={(Event) => setFname(Event.target.value)}
         />
+        <br />
+        <br/>
 
         <label htmlFor="Email">Email :</label>
         <input
@@ -27,6 +29,7 @@ const Signup = () => {
           value={Email}
           onChange={(Event) => setEmail(Event.target.value)}
         />
+        <br/><br/>
 
         <label htmlFor="Phone">Phone :</label>
         <input
@@ -36,7 +39,7 @@ const Signup = () => {
           value={Phone}
           onChange={(Event) => setPhone(Event.target.value)}
         />
-
+ <br/><br/>
         <label htmlFor="Password">Password :</label>
         <input
           type="password"
@@ -45,15 +48,21 @@ const Signup = () => {
           value={password}
           onChange={(Event) => setPassword(Event.target.value)}
         />
-
+ <br/><br/>
         <label htmlFor="Name">Gender :</label>
+        
         <select
           value={Gender}
+
           onChange={(Event) => setGender(Event.target.value)}
         >
+          <option value="...">select</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
+
+
+        
       </form>
     </div>
   );
