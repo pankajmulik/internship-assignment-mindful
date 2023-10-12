@@ -1,12 +1,12 @@
 const express = require("express");
-const dotenv = require("dotenv").config();
-const { default: mongoose } = require("mongoose");
+require("dotenv").config();
+const { default: mongoose, connection } = require("mongoose");
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URL = process.env.MONGO_URI;
 
 const workoutRoutes = require("./routes/workroutes");
 
@@ -16,14 +16,17 @@ app.use((req, res, next) => {
 
 app.use(express.json);
 
-app.use("/api/users", workoutRoutes);
+app.use("/api/data", workoutRoutes);
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_URL)
 
   .then(() => {
+    if (!connection) {
+      console.log("not connected to db ");
+    }
     // here port is imported from .env file which is used for hideing purpose
-    app.listen(PORT, (req, res) => {
+    app.listen(port, (req, res) => {
       console.log("connected db on port");
     });
   })

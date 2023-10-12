@@ -1,7 +1,7 @@
 const express = require("express");
 const Workout = require("../model/newUserModel");
 
-const getUser = async (req, res) => {
+const getUserProfile = async (req, res) => {
   const { id } = req.params;
   const user = await Workout.findById(id);
 
@@ -12,7 +12,7 @@ const getUser = async (req, res) => {
   res.status(200).json(user);
 };
 
-const createNewUser = async (req, res) => {
+const createSignupUser = async (req, res) => {
   const { name, email, phone, address, gender, referal, city, state } =
     req.body;
 
@@ -34,6 +34,6 @@ const createNewUser = async (req, res) => {
 };
 
 module.exports = {
-  getUser,
-  createNewUser,
+  getUserProfile,
+  createSignupUser,
 };
