@@ -7,9 +7,12 @@ const {
   createUser,
   deleteUser,
   updateUser,
-  userProfile,
-  signupUser,
 } = require("../controller/workoutController");
+
+const {
+  getUserProfile,
+  createSignupUser,
+} = require("../controller/signupController");
 
 router.use("/", getAddedUser);
 
@@ -18,8 +21,8 @@ router.use("/create", createUser);
 router.use("/delete", deleteUser);
 
 router.use("/update", updateUser);
+router.use("/profile", getUserProfile);
 
-router.use("/signup", signupUser);
-router.use("/profile", userProfile);
+router.use("/signupdata", createSignupUser);
 
 module.exports = router;
