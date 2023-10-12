@@ -6,11 +6,10 @@ const {
   getAddedUser,
   createUser,
   deleteUser,
+  updateUser,
+  userProfile,
+  signupUser,
 } = require("../controller/workoutController");
-
-
-
-const { getUser, createNewUser } = require("../controller/signupController");
 
 router.use("/", getAddedUser);
 
@@ -20,7 +19,7 @@ router.use("/delete", deleteUser);
 
 router.use("/update", updateUser);
 
-router.use("/signup", createNewUser);
-router.use("/profile", getUser);
+router.use("/signup", signupUser);
+router.use("/profile", userProfile);
 
 module.exports = router;
