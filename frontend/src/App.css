@@ -1,37 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Work+Sans:wght@300&display=swap");
 
+
+*{
+  box-sizing: border-box;
+}
+
 .App {
   height: 100vh;
   background-color: #85ffbd;
   background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
 }
-
-.form {
-  margin: 0%;
-  padding: 0%;
-  display: flex;
-  justify-content: center;
+.Home{
+   display: flex;
+   justify-content: center;
 }
-.heading {
-  width: 500px;
-  height: 100px;
-  margin-top: 50px;
-  font-family: "Work sans";
+
+.form-button{
+  
+}
+.heading{ width: 400px;
+  
+  
+  background-color: rgb(237, 245, 244);
+ font-family: Word sans;
   text-align: center;
 }
-
-.login-page {
-  display: flex;
-  justify-content: center;
-}
-.form-control {
+.form-control{
   width: 400px;
-  height: 300px;
+  margin-top: 20px;
+  
+  background-color: rgb(237, 245, 244);
+  text-align:center;
+}
 
-  background-color: aliceblue;
+.form-control-signup{
+  width: max-content;
+  height: 800px;
+  background-color:  rgb(237, 245, 244);
+  margin-top: 20px;
   text-align: center;
 }
 
-.form-control button {
-  margin: 50, 50, 20, 50;
+.form-control input {
+  margin: 10px;
+  padding :3px;
+  
+}
+
+.select-b{
+  text-align: center;
+}
+
+.select-c{
+
+width:150px ;
 }
