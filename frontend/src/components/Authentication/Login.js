@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Navigate,Link } from "react-router-dom";
-import Signup from "./Signup";
+import { Navigate } from "react-router-dom";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +8,7 @@ const Login = () => {
 
   const [redirect, setredirect] = useState(false);
   
-  const [state,setState]=useState("login")
+  
 
   const handleSubmit = (event) => {
     event.preventDefault(Login);
